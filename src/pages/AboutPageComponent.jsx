@@ -5,9 +5,9 @@ import NavbarComponent from "../components/NavFooter/NavbarComponent";
 export default function AboutPageComponent() {
   return (
     <div>
-      <NavbarComponent/>
+      
       <h1>Welcome To About Page</h1>
-      <FooterComponent />
+     
     </div>
   )
 }

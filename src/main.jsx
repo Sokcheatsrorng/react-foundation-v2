@@ -7,29 +7,45 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AboutPageComponent from './pages/AboutPageComponent.jsx'
 import ListProductPage from './pages/ListProductPage.jsx'
 import NotFound from './pages/NotFound.jsx'
+import DashboardLayout from './DashboardLayout/DashboardLayout.jsx'
+import RootLayout from './layout.jsx'
 
 // configuration react router
 
 const router = createBrowserRouter([
   //  you will create router here
   {
-    path:'/',
-    element: <App/>
+    path: '/', // root layout (webpate: about, product/proId)
+    element: <RootLayout/>,
+    children: [
+      {
+        path: '/', 
+        element: <App/>
+      },
+      {
+        path: '/product/:proId',
+        element: <ListProductPage />
+      },
+      {
+        path: '/about',
+        element: <AboutPageComponent />
+      },
+    ]
   },
   {
-    path: '/product/:proId', 
-    element: <ListProductPage/>
+    path: '/dashbaord',
+    element: <DashboardLayout/>, //dashboard layout
+    children:[{
+      
+    }]
   },
+
   {
-    path: '/about', 
-    element: <AboutPageComponent/>
-  },
-  {
-    path: "*", 
-    element: <NotFound/>
+    path: "*",
+    element: <NotFound />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}/>
+  <RouterProvider router={router} />
 )

@@ -25,7 +25,7 @@ export default function ListProductPage() {
 
   return (
     <div>
-        <NavbarComponent/>
+      
         {/* <h1>Product Id: {proId}</h1> */}
         {/* render detail product by id */}
         <ProductDetailComponent
@@ -36,7 +36,7 @@ export default function ListProductPage() {
           image={"https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"}
           price={product?.price || ''}
         />
-      <FooterComponent/>
+     
     </div>
   )
 }

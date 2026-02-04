@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import FooterComponent from './components/NavFooter/FooterComponent'
-import NavbarComponent from './components/NavFooter/NavbarComponent'
 import ListAllProducts from './components/Products/ListAllProducts'
+
 
 function App() {
 
@@ -21,7 +20,7 @@ function App() {
   }, [])
   return (
     <>
-      <NavbarComponent />
+
       <section className='grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-12 p-8 m-8'>
         {
           products?.map((pro) => (
@@ -37,9 +36,6 @@ function App() {
         }
       </section>
 
-
-
-      <FooterComponent />
     </>
   )
 }

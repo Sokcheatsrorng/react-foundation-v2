@@ -26,6 +26,7 @@ function App() {
         {
           products?.map((pro) => (
             <ListAllProducts
+              id={pro?.id || undefined}
               key={pro?.id}
               title={pro?.title}
               price={pro?.price}

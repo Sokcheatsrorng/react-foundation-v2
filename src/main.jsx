@@ -9,6 +9,7 @@ import ListProductPage from './pages/ListProductPage.jsx'
 import NotFound from './pages/NotFound.jsx'
 import DashboardLayout from './DashboardLayout/DashboardLayout.jsx'
 import RootLayout from './layout.jsx'
+import FormComponent from './components/Form/FormComponent.jsx'
 
 // configuration react router
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path: '/about',
         element: <AboutPageComponent />
       },
+      {
+        path: '/form', 
+        element: <FormComponent/>
+      }
     ]
   },
   {

@@ -12,6 +12,7 @@ import RootLayout from './layout.jsx'
 import FormComponent from './components/Form/FormComponent.jsx'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
+import JwtTestComponent from './components/jwt/JwtTestComponent.jsx'
 
 // configuration react router
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/form', 
         element: <FormComponent/>
+      }, 
+      {
+        path: '/jwt', 
+        element: <JwtTestComponent/>
       }
     ]
   },

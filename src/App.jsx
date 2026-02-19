@@ -2,6 +2,7 @@ import { MaterialReactTable } from "material-react-table";
 import { useCreatNewProductMutation, useDeleteProductByIdMutation, useGetAllProductQuery, useUpdateProductByIdMutation } from "./redux/services/productApi/productApi"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoginComponent from "./components/Form/LoginComponent";
 
 
 export default function App() {
@@ -95,6 +96,8 @@ function handleDeleteProductById(row){
   ]
   return (
     <div>
+
+      <LoginComponent/>
       {/* display single product popup */}
           {/* <SingleProductPopUp
       title={SingleProduct?.title}
@@ -107,6 +110,7 @@ function handleDeleteProductById(row){
         columns={columns}
         data={data || []}
       />
+      
 
     </div>
   )

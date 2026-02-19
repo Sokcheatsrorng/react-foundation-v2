@@ -1,9 +1,7 @@
-import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { createApi } from "@reduxjs/toolkit/query/react";
 
-export const productApi = createApi({
-    reducerPath: 'productApi', 
-    baseQuery: fetchBaseQuery({baseUrl: import.meta.env.VITE_BASE_FAKESTORE_API}),
+import { baseApi } from "../../baseApi";
+
+export const productApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         // getallproducts
         getAllProduct: builder.query({
@@ -15,12 +13,12 @@ export const productApi = createApi({
         }),
         // creat new product 
         creatNewProduct: builder.mutation({
-            query: ({createNewProduct})=> ({
+            query: (createNewProduct)=> ({
              url: `/products`,
              method: "POST", 
-             headers: {
-                'Content-Type': 'application/json'
-             },
+            //  headers: {
+            //     'Content-Type': 'application/json'
+            //  },
              body: createNewProduct
             })
         }),
@@ -36,7 +34,7 @@ export const productApi = createApi({
                 url: `/products/${id}`,
                 method: "DELETE"
             })
-        })
+        }),
 
     })
 })
